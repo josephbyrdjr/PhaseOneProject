@@ -1,1 +1,7 @@
+com\hcl\PhaseOneProject\model\User.class
+com\hcl\PhaseOneProject\repository\UserRepository.class
 com\hcl\PhaseOneProject\PhaseOneProjectApplication.class
+com\hcl\PhaseOneProject\controllers\UserController.class
+com\hcl\PhaseOneProject\service\impl\UserServiceImpl.class
+com\hcl\PhaseOneProject\service\UserService.class
+com\hcl\PhaseOneProject\config\UserConfig.class
