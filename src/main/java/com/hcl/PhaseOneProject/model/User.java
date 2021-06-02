@@ -1,12 +1,20 @@
 package com.hcl.PhaseOneProject.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="users")
 public class User {
 
-	private String empId;
+	@Id
+	private long empId;
 	private String empName;
 	private String pwd;
 
-	public User(String empId, String empName, String pwd) {
+	public User(long empId, String empName, String pwd) {
 		super();
 		this.empId = empId;
 		this.empName = empName;
@@ -17,11 +25,11 @@ public class User {
 
 	}
 
-	public String getEmpId() {
+	public long getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(String empId) {
+	public void setEmpId(long empId) {
 		this.empId = empId;
 	}
 
