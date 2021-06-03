@@ -10,35 +10,37 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
-	private long empId;
-	private String empName;
+	private long userId;
+	private String username;
 	private String pwd;
+	private String role;
 
-	public User(long empId, String empName, String pwd) {
+	public User(long userId, String username, String pwd, String role) {
 		super();
-		this.empId = empId;
-		this.empName = empName;
+		this.userId = userId;
+		this.username = username;
 		this.pwd = pwd;
+		this.role = role;
 	}
 
 	public User() {
 
 	}
 
-	public long getEmpId() {
-		return empId;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setEmpId(long empId) {
-		this.empId = empId;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
-	public String getEmpName() {
-		return empName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmpName(String empName) {
-		this.empName = empName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPwd() {
@@ -49,9 +51,18 @@ public class User {
 		this.pwd = pwd;
 	}
 
-	@Override
-	public String toString() {
-		return "User [empId=" + empId + ", empName=" + empName + ", pwd=" + pwd + "]";
+	public String getRole() {
+		return role;
 	}
 
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", pwd=" + pwd + ", role=" + role + "]";
+	}
+
+	
 }
