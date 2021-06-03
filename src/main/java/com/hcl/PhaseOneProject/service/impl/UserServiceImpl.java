@@ -14,9 +14,7 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	UserRepository userRepo;
-	
-	
-	
+
 	public void insertUser(User user) {
 		User user2 = new User();
 		user2.setUserId(3);
