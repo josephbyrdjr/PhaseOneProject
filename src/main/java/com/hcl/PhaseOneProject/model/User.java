@@ -1,8 +1,6 @@
 package com.hcl.PhaseOneProject.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -10,29 +8,49 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
-	private long userId;
+	@Column(name = "id")
+	private long id;
 	private String username;
-	private String pwd;
-	private String role;
+	private String password;
+	private boolean enabled;
 
-	public User(long userId, String username, String pwd, String role) {
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Authorities authorities = new Authorities();
+
+	public User(long id, String username, String password) {
 		super();
-		this.userId = userId;
+		this.id = id;
 		this.username = username;
-		this.pwd = pwd;
-		this.role = role;
+		this.password = password;
+		enabled = true;
+	}
+
+	public Authorities getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(Authorities authorities) {
+		this.authorities = authorities;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
 	public User() {
 
 	}
 
-	public long getUserId() {
-		return userId;
+	public long getId() {
+		return id;
 	}
 
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -43,25 +61,17 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", pwd=" + pwd + ", role=" + role + "]";
+		return "User [userId=" + id + ", username=" + username + ", pwd=" + password + "]";
 	}
 
 	
