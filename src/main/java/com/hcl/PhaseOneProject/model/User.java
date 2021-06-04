@@ -1,9 +1,12 @@
 package com.hcl.PhaseOneProject.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 
 @Entity
+@Data
 @Table(name="users")
 public class User {
 
@@ -25,48 +28,8 @@ public class User {
 		enabled = true;
 	}
 
-	public Authorities getAuthorities() {
-		return authorities;
-	}
-
-	public void setAuthorities(Authorities authorities) {
-		this.authorities = authorities;
-	}
-
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-
 	public User() {
 
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	@Override
