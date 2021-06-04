@@ -1,8 +1,8 @@
-package com.hcl.PhaseOneProject.service;
+package com.hcl.service;
 
 import java.util.List;
 
-import com.hcl.PhaseOneProject.model.*;
+import com.hcl.model.User;
 
 public interface UserService {
 	

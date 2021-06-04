@@ -1,16 +1,13 @@
-package com.hcl.PhaseOneProject.controllers;
+package com.hcl.controllers;
 
-import java.util.List;
-
+import com.hcl.model.User;
+import com.hcl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import com.hcl.PhaseOneProject.model.*;
-import com.hcl.PhaseOneProject.service.*;
 
 @Controller
 public class UserController {

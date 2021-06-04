@@ -1,14 +1,13 @@
-package com.hcl.PhaseOneProject.service.impl;
+package com.hcl.service.impl;
 
 import java.util.List;
 
-import com.hcl.PhaseOneProject.dao.UserDao;
+import com.hcl.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hcl.PhaseOneProject.model.User;
-import com.hcl.PhaseOneProject.repository.UserRepository;
-import com.hcl.PhaseOneProject.service.UserService;
+import com.hcl.model.User;
+import com.hcl.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{

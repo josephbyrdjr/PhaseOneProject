@@ -1,4 +1,4 @@
-package com.hcl.PhaseOneProject.config;
+package com.hcl.config;
 
 import javax.sql.DataSource;
 
@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -24,6 +25,7 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.jdbcAuthentication().dataSource(dataSource);
+
 	}
 
 	@Override
@@ -56,12 +58,4 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 		return NoOpPasswordEncoder.getInstance();
 	}
 
-//	@Override
-//	protected void configure(HttpSecurity http) throws Exception {
-//		http.authorizeRequests().antMatchers("/").permitAll()
-//				.antMatchers("/*").hasAnyRole("USER", "ADMIN")
-//				.and().formLogin()
-//				.loginPage("/login").permitAll();
-//		http.csrf().disable();
-//	}
 }

@@ -1,11 +1,10 @@
-package com.hcl.PhaseOneProject.dao.impl;
+package com.hcl.dao.impl;
 
-import com.hcl.PhaseOneProject.dao.UserDao;
-import com.hcl.PhaseOneProject.model.Authorities;
-import com.hcl.PhaseOneProject.model.User;
-import com.hcl.PhaseOneProject.repository.UserRepository;
+import com.hcl.dao.UserDao;
+import com.hcl.model.Authorities;
+import com.hcl.model.User;
+import com.hcl.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 

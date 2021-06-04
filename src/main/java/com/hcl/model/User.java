@@ -1,4 +1,4 @@
-package com.hcl.PhaseOneProject.model;
+package com.hcl.model;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.hcl.PhaseOneProject.dao;
+package com.hcl.dao;
 
-import com.hcl.PhaseOneProject.model.User;
+import com.hcl.model.User;
 
 import java.util.List;
 

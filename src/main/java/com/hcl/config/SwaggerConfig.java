@@ -1,4 +1,4 @@
-package com.hcl.PhaseOneProject.config;
+package com.hcl.config;
 
 import com.google.common.base.Predicate;
 import org.springframework.context.annotation.Bean;
