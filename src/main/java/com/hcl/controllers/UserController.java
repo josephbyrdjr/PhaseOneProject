@@ -3,6 +3,7 @@ package com.hcl.controllers;
 import com.hcl.model.User;
 import com.hcl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +31,8 @@ public class UserController {
     @PostMapping("/register")
     public String grabDisplayData(@RequestParam String username, @RequestParam Long userId, @RequestParam String pwd,
                                   Model model) {
-        User user = new User(userId, username, pwd);
+        BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
+        User user = new User(userId, username, bCrypt.encode(pwd));
         userService.insertUser(user);
         model.addAttribute("msg", "New User Added");
         return "login";

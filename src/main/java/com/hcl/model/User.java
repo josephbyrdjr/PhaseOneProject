@@ -1,6 +1,7 @@
 package com.hcl.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name="users")
+@NoArgsConstructor
 public class User {
 
 	@Id
@@ -26,10 +28,6 @@ public class User {
 		this.username = username;
 		this.password = password;
 		enabled = true;
-	}
-
-	public User() {
-
 	}
 
 	@Override
