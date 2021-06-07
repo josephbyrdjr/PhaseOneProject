@@ -16,7 +16,6 @@ public class UserServiceImpl implements UserService{
 	UserDao userDao;
 
 	public void insertUser(User user) {
-
 		userDao.insertUser(user);
 	}
 	
